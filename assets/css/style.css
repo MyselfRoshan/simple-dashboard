@@ -1,0 +1,218 @@
+﻿/* Box sizing rules*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Reset margin, padding and font-size */
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+
+/* Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+/* Allow percentage-based heights in the application */
+html,
+body {
+    height: 100%;
+}
+
+/* Set core root defaults */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul[class],
+ol[class] {
+    list-style: none;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+a.nav-links {
+    text-decoration: none;
+}
+/* Make images easier to work with */
+img,
+picture,
+video,
+canvas,
+svg {
+    max-width: 100%;
+    display: block;
+}
+
+    /* Blur images when they have no alt attribute */
+    img:not([alt]) {
+        filter: blur(10px);
+    }
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+:root {
+    --primary-clr-400: hsl(150, 100%, 98%);
+    --primary-clr-300: hsl(150, 100%, 50%);
+    --primary-clr-200: hsl(147, 49.8%, 46.9%);
+    --primary-clr-100: hsl(177, 47%, 46%);
+    --secondary-clr-400: hsl(0, 0%, 50%);
+    --box-shadow-clr: hsl(0,0%,0%,0.25);
+    --fs-200: 1rem;
+    --fs-100: 0.9375rem;
+    --fw-300: 300;
+    --fw-400: 400;
+    --fw-700: 700;
+}
+
+body {
+    font-family: 'Recursive',sans-serif;
+    font-weight: var(--fw-400);
+    font-size: var(--fs-200);
+}
+
+/*Login Page*/
+.login-body {
+    background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+    background-size: 1800% 1800%;
+    animation: rainbow 100s ease infinite;
+}
+
+@keyframes rainbow {
+    0% {
+        background-position: 0% 82%
+    }
+
+    50% {
+        background-position: 100% 19%
+    }
+
+    100% {
+        background-position: 0% 82%
+    }
+}
+
+
+.login-container {
+    height: 100%;
+    display: grid;
+    place-items: center;
+}
+
+#loginForm {
+    display: grid;
+    place-items: center;
+}
+
+.user-login {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 1.5rem;
+    width: fit-content;
+    background-color: var(--primary-clr-400);
+    box-shadow: 1rem 1rem 1rem 0.1rem var(--box-shadow-clr);
+    border-radius: 10px;
+}
+
+input[type="text"] {
+    text-indent: 0.5rem;
+    height: 2.25rem;
+    border-radius: 5px;
+    margin-inline-start: 0.5rem;
+}
+
+#loginBtn {
+    padding: 0.5rem 0.75em;
+    border-radius: 5px;
+    color: var(--primary-clr-400);
+    background-color: var(--primary-clr-200);
+    border: none;
+}
+
+    #loginBtn:hover {
+        scale: 1.1;
+        background-color: var(--primary-clr-300);
+        transition: background-color 500ms ease-in-out, scale 500ms ease-in-out;
+    }
+
+/*Dashboard Page*/
+.gallery-grid {
+    max-width: 143rem;
+    margin-inline: auto;
+    padding: 3rem;
+    background-color: var(--primary-clr-100);
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    grid-template-rows: 200px;
+    gap: 1rem;
+}
+
+.grid-img > * {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.grid-img:hover {
+    scale: 1.05;
+    object-fit: cover;
+    transition: scale 500ms ease-in-out 0s;
+}
+
+.image-3, .image-8 {
+    grid-row: span 2/auto;
+}
+
+.image-7, .image-14 {
+    grid-column: span 2/auto;
+}
+
+.image-1, .image-9, .image-17, .image-20 {
+    grid-column: span 3/auto;
+}
+
+.image-12 {
+    grid-row: span 3/auto;
+}
+
+.image-13 {
+    grid-row: span 3/auto;
+    grid-column: span 3/auto;
+}
+
+.image-15, .image-16 {
+    grid-row: span 2/auto;
+    grid-column: span 2/auto;
+}

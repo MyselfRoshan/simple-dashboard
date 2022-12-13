@@ -1,0 +1,134 @@
+/* Box sizing rules*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Reset margin, padding and font-size */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* Allow percentage-based heights in the application */
+html,
+body {
+  height: 100%;
+}
+
+/* Set core root defaults */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+a.nav-links {
+  text-decoration: none;
+}
+/* Make images easier to work with */
+img,
+picture,
+video,
+canvas,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Blur images when they have no alt attribute */
+img:not([alt]) {
+  filter: blur(10px);
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+:root{
+   --primary-clr-400: hsl(150, 100%, 98%) ;
+   --primary-clr-300: hsl(150, 100%, 50%) ;
+   --primary-clr-200:hsl(147, 49.8%, 46.9%);
+   --primary-clr-100: hsl(177, 47%, 46%) ;
+
+   --secondary-clr-400:hsl(0, 0%, 50%);
+
+
+   --fs-200:1rem;
+   --fs-100:0.9375rem;
+
+   --fw-300:300;
+   --fw-400:400;
+   --fw-700:700;
+}
+body{
+    font-family: 'Recursive',sans-serif;
+    font-weight: var(--fw-400);
+    font-size:var(--fs-200) ;
+background: linear-gradient(to right, var(--primary-clr-100), var(--secondary-clr-400)); 
+
+}
+.login-form{
+    display: grid;
+    place-items: center;
+}
+
+.user-login{
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap:1rem;
+    background-color: var(--primary-clr-400);
+    border:2px solid var(--secondary-clr-400);
+    border-radius: 10px;
+}
+
+.loginBtn{
+border-radius: 5px;
+color: var(--primary-clr-400);
+background-color: var(--primary-clr-200);
+    border:none;
+}
+
+.loginBtn:hover{
+    scale:1.1;
+    background-color: var(--primary-clr-300);
+    transition: background-color 500ms ease-in-out,scale 500ms ease-in-out;
+
+}
